@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bluebird = require('bluebird');
 mongoose.Promise = bluebird;
 const User = require('./models/user');
+const Snippet = require('./models/snippet');
 const createSnippet = require('./routes/createSnippet');
 const loginRegistration = require('./routes/loginRegistration');
 
@@ -50,7 +51,7 @@ app.use('/createsnippet', createSnippet);
 // this middleware function will check to see if we have a user in the session.
 // if not, we redirect to the login form.
 const requireLogin = (request, response, next) => {
-  console.log('request.user', request.user);
+  // console.log('request.user', request.user);
   if (request.user) {
     next();
   } else {
@@ -59,11 +60,18 @@ const requireLogin = (request, response, next) => {
   }
 };
 
-app.get('/', requireLogin, function(request, response, next) {
+app.get('/', requireLogin, function(request, response) {
+  console.log(session);
+  Snippet.find({createdBy: request.user.username})
+    .then((snippets) => {
+    // let snippets = Snippet.find({title: 'Mongo Export'});
+    // console.log(snippets);
+    response.render('home', {user: request.user, snippets: snippets})
+  })
 
-  User.find()
-  .then(users => response.render('home', {users: users, user: request.user}))
   .catch(err => response.send('Booooooo'));
+
+  console.log(request.user);
 });
 
 
@@ -71,6 +79,14 @@ app.get('/', requireLogin, function(request, response, next) {
 app.get('/logout', function(request, response) {
   request.logout();
   response.redirect('/');
+});
+
+
+// DELETE SNIPPET ===========================================
+app.get('/deleteSnippet', (request, response) => {
+  Snippet.findById(request.query.id)
+  .remove()
+  .then(() => response.redirect('/'));
 });
 
 

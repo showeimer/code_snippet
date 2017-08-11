@@ -16,7 +16,7 @@ routes.use(flash());
 // configure passport
 passport.use(
   new LocalStrategy(function(email, password, done) {
-    console.log('LocalStrategy', email, password);
+    // console.log('LocalStrategy', email, password);
     User.authenticate(email, password)
       // success!!
       .then(user => {

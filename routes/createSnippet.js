@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 // CREATE SNIPPET PAGE =================================
 routes.get('/new', (request, response) => {
-  response.render('createSnippet');
+  response.render('createSnippet', {user: request.user});
 });
 
 routes.post('/create', (request, response) => {

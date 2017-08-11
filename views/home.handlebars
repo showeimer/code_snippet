@@ -10,6 +10,30 @@
     <a href="/createsnippet/new">Create a code snippet!</a><br />
     <a href="/logout">Log out</a>
 
-    
+
+    <h2>Your Snippets</h2>
+
+    <table border="1">
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Optional Notes</th>
+        <th>Language</th>
+        <th>Tags</th>
+      </tr>
+      {{#snippets}}
+      <tr>
+        <td><a href="/snippet/{{title}}">{{title}}</a></td>
+        <td>{{body}}</td>
+        <td>{{optionalNotes}}</td>
+        <td>{{language}}</td>
+        <td>{{tags}}</td>
+        <td><a href="/deleteSnippet/?id={{_id}}">Delete</a></td>
+      </tr>
+      {{/snippets}}
+
+    </table>
+
+
   </body>
 </html>
