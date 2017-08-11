@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Snippet - Search Results</title>
+  </head>
+  <body>
+
+    <h1>Search Results</h1>
+
+    <table border="1">
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Optional Notes</th>
+        <th>Language</th>
+        <th>Tags</th>
+      </tr>
+      {{#snippets}}
+      <tr>
+        <td><a href="/search/{{title}}">{{title}}</a></td>
+        <td>{{body}}</td>
+        <td>{{optionalNotes}}</td>
+        <td>{{language}}</td>
+        <td>{{tags}}</td>
+        <td><a href="/deleteSnippet/?id={{_id}}">Delete</a></td>
+      </tr>
+      {{/snippets}}
+
+    </table>
+
+    <a href="/" id="back">Home</a>
+  </body>
+</html>

@@ -10,8 +10,18 @@
     <a href="/createsnippet/new">Create a code snippet!</a><br />
     <a href="/logout">Log out</a>
 
+    <h3>Global Search</h3>
+    <form action="/search/globalresults" method="post">
+      <input type="text" name="search" value="" placeholder="Search entire database for code snippets">
+      <button>Search</button>
+    </form>
 
     <h2>Your Snippets</h2>
+
+    <form action="/search/userresults" method="post">
+      <input type="text" name="search" value="" placeholder="Search by language or tag">
+      <button>Search</button>
+    </form>
 
     <table border="1">
       <tr>
@@ -23,7 +33,7 @@
       </tr>
       {{#snippets}}
       <tr>
-        <td><a href="/snippet/{{title}}">{{title}}</a></td>
+        <td><a href="/search/{{title}}">{{title}}</a></td>
         <td>{{body}}</td>
         <td>{{optionalNotes}}</td>
         <td>{{language}}</td>

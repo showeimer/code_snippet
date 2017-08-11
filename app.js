@@ -9,6 +9,7 @@ const User = require('./models/user');
 const Snippet = require('./models/snippet');
 const createSnippet = require('./routes/createSnippet');
 const loginRegistration = require('./routes/loginRegistration');
+const searchSnippet = require('./routes/searchSnippet');
 
 const app = express();
 
@@ -44,7 +45,7 @@ app.use(express.static('public'));
 // ROUTERS ===================================================
 app.use('/', loginRegistration);
 app.use('/createsnippet', createSnippet);
-
+app.use('/search', searchSnippet)
 
 // HOME PAGE =================================================
 
