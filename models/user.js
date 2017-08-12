@@ -10,6 +10,7 @@ const userSchema = new Schema({
   passwordHash: {type: String}
 });
 
+// create an encrypted password for storage in database
 userSchema.methods.setPassword = function(password) {
   this.passwordHash = bcrypt.hashSync(password, 8);
 };
@@ -18,7 +19,6 @@ userSchema.methods.setPassword = function(password) {
 userSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.passwordHash);
 };
-
 
 // static method to authenticate a user
 userSchema.statics.authenticate = function(username, password) {

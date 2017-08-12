@@ -16,11 +16,8 @@ routes.post('/create', (request, response) => {
 
   snippet
     .save()
-    // if good...
     .then(() => response.redirect('/'))
-    // if bad...
     .catch(err => console.log(err));
 });
-
 
 module.exports = routes;

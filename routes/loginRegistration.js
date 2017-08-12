@@ -51,8 +51,7 @@ routes.get('/login', (request, response) => {
 });
 
 // Login Submission
-routes.post(
-  '/login',
+routes.post('/login',
   passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login?failed=true',
@@ -74,11 +73,8 @@ routes.post('/register', (request, response) => {
 
   user
     .save()
-    // if good...
     .then(() => response.redirect('/'))
-    // if bad...
     .catch(err => console.log(err));
 });
-
 
 module.exports = routes;

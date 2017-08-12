@@ -3,6 +3,7 @@ const routes = express.Router();
 const Snippet = require('../models/snippet');
 const bodyParser = require('body-parser');
 
+
 // SNIPPET PAGE =================================================
 routes.get('/:snippet', function(request, response) {
   let oneSnippet = request.params.snippet;
@@ -22,7 +23,6 @@ routes.post('/globalresults', function(request, response) {
   .then(snippets => response.render('searchSnippet', {snippets: snippets}))
   .catch(err => response.send('Booooooo'));
 });
-
 
 
 // USERS OWN SNIPPET SEARCHER ====================================
