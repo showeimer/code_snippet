@@ -8,6 +8,7 @@ Using Express and Mongoose, create an application that organizes code snippets t
 ##How to import databases
 
 mongoimport --db newdb --collection users --file users.json
+
 mongoimport --db newdb --collection snippets --file snippets.json
 
 
