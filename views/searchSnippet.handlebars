@@ -3,31 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Code Snippet - Search Results</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+    <div class="wrapper">
 
-    <h1>Search Results</h1>
+      <header id="siteHeader">
+        <div class="mainHeader">
+          <h1 id="title">Code Snippet</h1>
+        </div>
+      </header>
 
-    <table border="1">
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Optional Notes</th>
-        <th>Language</th>
-        <th>Tags</th>
-      </tr>
-      {{#snippets}}
-      <tr>
-        <td><a href="/search/{{title}}">{{title}}</a></td>
-        <td>{{body}}</td>
-        <td>{{optionalNotes}}</td>
-        <td>{{language}}</td>
-        <td>{{tags}}</td>
-      </tr>
-      {{/snippets}}
+      <h1>Search Results</h1>
 
-    </table>
+      <table border="1">
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Optional Notes</th>
+          <th>Language</th>
+          <th>Tags</th>
+        </tr>
+        {{#snippets}}
+        <tr>
+          <td><a href="/search/{{title}}">{{title}}</a></td>
+          <td>{{body}}</td>
+          <td>{{optionalNotes}}</td>
+          <td>{{language}}</td>
+          <td>{{tags}}</td>
+        </tr>
+        {{/snippets}}
 
-    <a href="/">Home</a>
+      </table>
+
+      <a href="/">Home</a>
+
+    </div>
   </body>
 </html>

@@ -66,7 +66,7 @@ const requireLogin = (request, response, next) => {
 };
 
 app.get('/', requireLogin, function(request, response) {
-  console.log(session);
+  // console.log(session);
   Snippet.find({createdBy: request.user.username})
     .then((snippets) => {
       response.render('home', {user: request.user, snippets: snippets})

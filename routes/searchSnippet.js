@@ -25,7 +25,7 @@ routes.post('/globalresults', function(request, response) {
 });
 
 
-// USERS OWN SNIPPET SEARCHER ====================================
+// USERS OWN SNIPPET SEARCHER ===================================
 
 routes.post('/userresults', function(request, response) {
   let search = request.body.search;

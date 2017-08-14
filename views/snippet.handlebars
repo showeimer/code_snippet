@@ -4,17 +4,29 @@
     <meta charset="utf-8">
     {{#snippets}}
     <title>Code Snippet - {{title}}</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <div>
-        <h2>{{title}}</h1>
-        <h3>{{body}}</h4>
-        <h4>Notes:  {{optionalNotes}}</h4>
-        <h4>Language:  {{language}}</h4>
-        <h4>Tags:  {{tags}}</h4>
-        <h4>Created By:  {{createdBy}}</h4>
-      {{/snippets}}
+    <div class="wrapper">
+
+      <header id="siteHeader">
+        <div class="mainHeader">
+          <h1 id="title">Code Snippet</h1>
+        </div>
+      </header>
+
+      <div class="snippet">
+
+          <h2>{{title}}</h1>
+          <h3>{{body}}</h4>
+          <h4>Notes:  {{optionalNotes}}</h4>
+          <h4>Language:  {{language}}</h4>
+          <h4>Tags:  {{tags}}</h4>
+          <h4>Created By:  {{createdBy}}</h4>
+        {{/snippets}}
+      </div>
+      <a href="/">Back</a>
+
     </div>
-    <a href="/">Back</a>
   </body>
 </html>

@@ -1,0 +1,108 @@
+.wrapper {
+  margin: 2.5% 20%;
+  font-family: Helvetica;
+}
+
+input {
+  outline: none;
+}
+
+/* HOME PAGE STYLING =========================================== */
+
+/* SITE HEADER STYLING ========================= */
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: blue;
+}
+
+.mainHeader h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.subHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.subHeader a {
+  align-self: flex-end;
+}
+
+.subHeader, .subHeader a, .subHeader h4 {
+  margin: 0;
+}
+
+#siteHeader {
+  padding-bottom: 5%;
+  /*border-bottom: 1px dashed lightgrey;*/
+}
+
+/* GLOBAL SEARCH SECTION ========================= */
+
+.globalSearchBar {
+  padding: 2% 0;
+  border-top: 1px dashed lightgrey;
+  border-bottom: 1px dashed lightgrey;
+}
+
+#globalSearch {
+  width: 90%;
+  font-size: 1.25rem;
+}
+
+
+/* USER SNIPPETS SECTION ========================= */
+
+.userSnippetsHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5% 0;
+}
+
+.userSnippetsHeader h2, .userSnippetsHeader a {
+  margin: 0;
+}
+
+.userSnippetsHeader a {
+  align-self: center;
+}
+
+#userSearch {
+  width: 90%;
+  font-size: 1rem;
+}
+
+.userSnippets form {
+  margin-bottom: 5%;
+}
+
+
+
+/* CREATE SNIPPET PAGE STYLING ===================================== */
+
+#createSnippetSection h2, a {
+  margin: 0;
+}
+
+.createSnippet {
+  margin-top: 5%;
+}
+
+.createSnippet input {
+  width: 100%;
+  font-size: 1.25rem;
+  margin-bottom: 2.5%;
+}
+
+/* INDIVIDUAL SNIPPET PAGE ======================================= */
+
+.snippet h3 {
+  font-style: italic;
+  font-weight: normal;
+}

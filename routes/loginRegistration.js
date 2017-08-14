@@ -8,12 +8,11 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-// connect passport to express boilerplate
+// Telling Express to configure passport and flash messages
 routes.use(passport.initialize());
 routes.use(passport.session());
 routes.use(flash());
 
-// configure passport
 passport.use(
   new LocalStrategy(function(email, password, done) {
     // console.log('LocalStrategy', email, password);
@@ -31,12 +30,12 @@ passport.use(
   })
 );
 
-// store the user's id in the session
+// Send UserID to session
 passport.serializeUser((user, done) => {
   done(null, user._id);
 });
 
-// get the user from the session based on the id
+// Remove UserID from session for logout
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => done(null, user));
 });

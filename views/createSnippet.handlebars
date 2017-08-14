@@ -3,22 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Code Snippet - Create</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <h1>Code Snippet Creator</h1>
-    <a href="/">Back</a>
+    <div class="wrapper">
 
-    <form action="/createsnippet/create" method="post">
-      Title: <input type="text" name="title" /><br />
-      Body: <input type="text" name="body" /><br />
-      Optional Notes: <input type="text" name="optionalNotes" /><br />
-      Language: <input type="text" name="language" /><br />
-      Tags: <input type="text" name="tags" /><br />
+      <header id="siteHeader">
+        <div class="mainHeader">
+          <h1 id="title">Code Snippet</h1>
+        </div>
+      </header>
 
-      {{#if user._id}}
-        <input type="hidden" name="createdBy" value="{{user.username}}" />
-      {{/if}}
-      <button>Create!</button>
-    </form>
+      <section id="createSnippetSection">
+
+        <h2>Code Snippet Creator</h2>
+        <a href="/">Back</a>
+
+        <form class="createSnippet" action="/createsnippet/create" method="post">
+          Title: <input type="text" name="title" /><br />
+          Body: <input type="text" name="body" /><br />
+          Optional Notes: <input type="text" name="optionalNotes" /><br />
+          Language: <input type="text" name="language" /><br />
+          Tags: <input type="text" name="tags" /><br />
+
+          {{#if user._id}}
+            <input type="hidden" name="createdBy" value="{{user.username}}" />
+          {{/if}}
+          <button>Create!</button>
+        </form>
+
+      </section>
+    </div>
   </body>
 </html>

@@ -1,0 +1,4 @@
+{"_id":{"$oid":"598e0097c1a3090db1d52049"},"title":"Mongo Export","body":"mongoexport --db databaseName --collection collectionName --out nameThisFile.json","optionalNotes":"Bash command for exporting a Mongo database","language":"MongoDB","tags":"Mongo","createdBy":"showeimer","__v":0}
+{"_id":{"$oid":"598e034c77c7260e1ee507d1"},"title":"HTML Header","body":"\u003cheader\u003e\u003c/header\u003e","optionalNotes":"","language":"HTML","tags":"HTML","createdBy":"showeimer","__v":0}
+{"_id":{"$oid":"598e0770f12e860e9af16c08"},"title":"React Importation Statement","body":"import React from 'react';","optionalNotes":"Used to import the react package","language":"React.js","tags":"React, JavaScript","createdBy":"bretty","__v":0}
+{"_id":{"$oid":"598e0b895fd8570f28c3daee"},"title":"Random Snippet","body":"blah blah blah","optionalNotes":"","language":"Python","tags":"Python","createdBy":"bretty","__v":0}

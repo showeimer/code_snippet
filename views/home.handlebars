@@ -3,47 +3,65 @@
   <head>
     <meta charset="utf-8">
     <title>Code Snippet - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <h1>Welcome, {{user.name}}</h1>
+    <div class="wrapper">
+      <header id="siteHeader">
+        <div class="mainHeader">
+          <h1 id="title">Code Snippet</h1>
 
-    <a href="/createsnippet/new">Create a code snippet!</a><br />
-    <a href="/logout">Log out</a>
+          <div class="subHeader">
+            <h4 id="welcome">Welcome, {{user.name}}</h4>
+            <a href="/logout">Log out</a>
+          </div>
 
-    <h3>Global Search</h3>
-    <form action="/search/globalresults" method="post">
-      <input type="text" name="search" value="" placeholder="Search entire database for code snippets">
-      <button>Search</button>
-    </form>
+        </div>
+      </header>
 
-    <h2>Your Snippets</h2>
+      <section class="globalSearchBar">
 
-    <form action="/search/userresults" method="post">
-      <input type="text" name="search" value="" placeholder="Search by language or tag">
-      <button>Search</button>
-    </form>
+        <form action="/search/globalresults" method="post">
+          <input id="globalSearch" type="text" name="search" value="" placeholder="Search entire database for code snippets">
+          <button>Search</button>
+        </form>
 
-    <table border="1">
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Optional Notes</th>
-        <th>Language</th>
-        <th>Tags</th>
-      </tr>
-      {{#snippets}}
-      <tr>
-        <td><a href="/search/{{title}}">{{title}}</a></td>
-        <td>{{body}}</td>
-        <td>{{optionalNotes}}</td>
-        <td>{{language}}</td>
-        <td>{{tags}}</td>
-        <td><a href="/deleteSnippet/?id={{_id}}">X</a></td>
-      </tr>
-      {{/snippets}}
+      </section>
 
-    </table>
+      <section class="userSnippets">
 
+        <div class="userSnippetsHeader">
+          <h2>Your Snippets</h2>
+          <a href="/createsnippet/new">Create a code snippet!</a>
+        </div>
+        
+        <form action="/search/userresults" method="post">
+          <input id="userSearch" type="text" name="search" value="" placeholder="Search your snippets by language or tag">
+          <button>Search</button>
+        </form>
 
+        <table border="1">
+          <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Optional Notes</th>
+            <th>Language</th>
+            <th>Tags</th>
+          </tr>
+          {{#snippets}}
+          <tr>
+            <td><a href="/search/{{title}}">{{title}}</a></td>
+            <td>{{body}}</td>
+            <td>{{optionalNotes}}</td>
+            <td>{{language}}</td>
+            <td>{{tags}}</td>
+            <td><a href="/deleteSnippet/?id={{_id}}">X</a></td>
+          </tr>
+          {{/snippets}}
+
+        </table>
+      </section>
+
+    </div>
   </body>
 </html>

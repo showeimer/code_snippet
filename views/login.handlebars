@@ -4,24 +4,33 @@
 <head>
   <meta charset="utf-8">
   <title>Code Snippet - Login</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+  <div class="wrapper">
 
-  <h1>Login</h1>
+    <header id="siteHeader">
+      <div class="mainHeader">
+        <h1 id="title">Code Snippet</h1>
+      </div>
+    </header>
 
-  {{#if failed}}
-    Login failed :(
-  {{/if}}
+    <h1>Login</h1>
 
-  <form action="/login" method="post">
-    Username: <input type="text" name="username" /><br />
-    Password: <input type="password" name="password" /><br />
-    <button>Login</button>
-  </form>
+    {{#if failed}}
+      Login failed :(
+    {{/if}}
 
-  <a href="/signup">Register</a>
+    <form action="/login" method="post">
+      Username: <input type="text" name="username" /><br />
+      Password: <input type="password" name="password" /><br />
+      <button>Login</button>
+    </form>
+
+    <a href="/signup">Register</a>
+
+  </div>
 </body>
 
 </html>

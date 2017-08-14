@@ -1,7 +1,15 @@
 #Code Snippet Organizer
+
 Build an organizer for holding your and others' code snippets.
 
 Using Express and Mongoose, create an application that organizes code snippets that you save for later use.
+
+
+##How to import databases
+
+mongoimport --db newdb --collection users --file users.json
+mongoimport --db newdb --collection snippets --file snippets.json
+
 
 ##At a minimum, snippets should have:
 
@@ -10,6 +18,7 @@ Using Express and Mongoose, create an application that organizes code snippets t
 3. optional notes
 4. a language
 5. tags -- that is, user-defined words or phrases that classify the code, like "authentication", "front-end", "middleware", or "database".
+
 
 ##Your application must:
 
@@ -21,6 +30,7 @@ Using Express and Mongoose, create an application that organizes code snippets t
 6. allow you to see a list of all your snippets for a specific tag
 7. allow you to look at an individual snippet
 8. have an API to allow for creating and viewing of snippets as listed above
+
 
 ##Advanced activities  
 
